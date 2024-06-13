@@ -21,23 +21,25 @@
 }
 
 body {
-  background: lightblue;
-  background: linear-gradient(to top, var(--cerulean), var(--berkeley-blue));
+  background: var(--charcoal);
 
   font-family: "Ubuntu", sans-serif;
   box-sizing: border-box;
 
   background-repeat: no-repeat;
 
-  min-height: 100vh;
+  height: 100vh;
+  width: 100%;
+
+  overflow: hidden;
 }
 
 :root {
-  --red-pantone: #e63946ff;
-  --honeydew: #f1faeeff;
-  --non-photo-blue: #a8dadcff;
-  --cerulean: #457b9dff;
-  --berkeley-blue: #1d3557ff;
+  --lapis-lazuli: #33658aff;
+  --carolina-blue: #86bbd8ff;
+  --charcoal: #1c2c35;
+  --hunyadi-yellow: #f6ae2dff;
+  --orange-pantone: #f26419ff;
 }
 
 /* General Styles */

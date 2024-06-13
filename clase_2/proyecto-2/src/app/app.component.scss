@@ -1,15 +1,13 @@
-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-header {
-  grid-column: 1 / -1;
-}
-
 main {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+}
+
+app-students {
+  width: 100%;
+}
+
+app-sidebar {
+  margin-right: 50px;
 }

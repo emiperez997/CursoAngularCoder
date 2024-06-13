@@ -1,1 +1,17 @@
-<p>students works!</p>
+<section>
+  <h2>Listado de estudiantes</h2>
+
+  <table>
+    <tr>
+      <th>Nombre</th>
+      <th>Edad</th>
+      <th>Correo</th>
+    </tr>
+
+    <tr *ngFor="let student of students">
+      <td>{{ student.name }}</td>
+      <td>{{ student.age }}</td>
+      <td>{{ student.email }}</td>
+    </tr>
+  </table>
+</section>

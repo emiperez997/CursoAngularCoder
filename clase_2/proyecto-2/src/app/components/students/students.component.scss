@@ -1,0 +1,45 @@
+section {
+  height: calc(100vh - 3rem);
+  padding: 10px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 15px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: white;
+  margin: 0;
+}
+
+table {
+  width: 100%;
+  height: auto;
+  border-collapse: collapse;
+  text-align: center;
+
+  background: var(--lapis-lazuli);
+
+  padding: 20px;
+
+  th {
+    background: var(--carolina-blue);
+    color: white;
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  td {
+    color: white;
+    font-size: 1rem;
+    padding: 20px 0px;
+  }
+
+  tr:hover {
+    background: var(--hunyadi-yellow);
+  }
+}
