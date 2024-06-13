@@ -1,0 +1,43 @@
+header div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+
+  background: var(--berkeley-blue);
+  border: 1px solid var(--honeydew);
+  border-radius: 10px;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+
+  width: 80%;
+
+  text-align: center;
+
+  gap: 1rem;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+header div:hover {
+  transform: scale(1.1);
+}
+
+h1 {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+p {
+  margin: 0;
+  color: lightblue;
+  font-size: 1rem;
+  font-weight: thin;
+}
