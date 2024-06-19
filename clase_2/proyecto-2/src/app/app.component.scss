@@ -2,12 +2,17 @@ main {
   display: flex;
   flex-direction: row;
   align-items: center;
+  overflow: hidden;
 }
 
 app-students {
   width: 100%;
 }
 
-app-sidebar {
-  margin-right: 50px;
+app-sidebar:hover {
+  margin-right: 30px;
+
+  @media (width > 768px) {
+    margin-right: 0;
+  }
 }

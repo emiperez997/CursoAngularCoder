@@ -1,17 +1,27 @@
 <section>
-  <h2>Listado de estudiantes</h2>
+  <div>
+    <h2>Listado de estudiantes</h2>
 
-  <table>
-    <tr>
-      <th>Nombre</th>
-      <th>Edad</th>
-      <th>Correo</th>
-    </tr>
+    <div class="table">
+      <div class="table-header">
+        <div class="table-header-cell">Nombre</div>
+        <div class="table-header-cell">Correo</div>
+        <div class="table-header-cell">Edad</div>
+      </div>
 
-    <tr *ngFor="let student of students">
-      <td>{{ student.name }}</td>
-      <td>{{ student.age }}</td>
-      <td>{{ student.email }}</td>
-    </tr>
-  </table>
+      <div class="table-body">
+        <div class="table-body-cell" *ngFor="let student of students">
+          <div class="table-body-cell-content">
+            {{ student.name }}
+          </div>
+          <div class="table-body-cell-content">
+            {{ student.email }}
+          </div>
+          <div class="table-body-cell-content">
+            {{ student.age }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
