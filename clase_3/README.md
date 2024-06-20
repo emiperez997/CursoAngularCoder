@@ -149,3 +149,71 @@ let esSoltero = true; // boolean
 
 let frutas: string[] = ["manzana", "naranja", "limón"];
 ```
+
+`Enums`: Tipo de datos que representa un conjunto de valores.
+
+```ts
+enum Volumen {
+  Bajo = 10,
+  Medio = 50,
+  Alto = 100,
+}
+```
+
+`Objetos`: Para tipar objetos debemos utilizar interfaces
+`Interfaces`: Son un contrato que nos permite definir los campos que debemos tener en un objeto.
+
+```ts
+interface Usuario {
+  nombre: string;
+  edad: number;
+  ininicarSesion: (email: string, password: string) => void;
+}
+
+let usuario: Usuario = {
+  nombre: "Juan",
+  edad: 27,
+  ininicarSesion: (email: string, password: string) => {
+    console.log("Iniciando sesión");
+  },
+};
+```
+
+`Never`: Tipo de datos que no puede ser utilizado
+
+`Clases`: Tipo de datos que representa un objeto.
+
+```ts
+class Producto {
+  nombre: string;
+  precio: number;
+}
+
+let producto: Producto = {
+  nombre: "Producto",
+  precio: 10,
+};
+```
+
+`Genericos`: Tipo de datos que se utiliza para definir un tipo de datos que puede ser utilizado en varios contextos.
+
+```ts
+class Paginacion<T> {
+  total: number;
+  items: T[];
+}
+
+let paginacion: Paginacion<Producto> = {
+  total: 10,
+  items: [producto],
+};
+
+let paginacion2: Paginacion<string> = {
+  total: 10,
+  items: ["Producto"],
+};
+```
+
+`Recursos`
+
+- [Principios SOLID](https://profile.es/blog/principios-solid-desarrollo-software-calidad/)
