@@ -1,0 +1,115 @@
+<h2>NgClass</h2>
+
+<section>
+  <p [ngClass]="hayError ? 'error' : 'success'">
+    La edad del usuario es: {{ edad + 1 }}
+  </p>
+  <p [ngClass]="{ success: !hayError, error: hayError }">
+    El nombre de la app es: {{ title }}
+  </p>
+  <p [class.error]="hayError" [class.success]="!hayError">
+    Nueva forma de aplicar clases
+  </p>
+</section>
+
+<hr />
+
+<h2>NgStyle</h2>
+
+<section>
+  <p [ngStyle]="{ fontWeight: hayError ? 'bold' : 'thin' }">
+    Ng Style: Font Weight
+  </p>
+  <p [style.font-size]="hayError ? '1.5rem' : '1rem'">Ng Style: Font Size</p>
+</section>
+
+<hr />
+
+<h2>Custom Directives</h2>
+
+<p appResaltado>
+  lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+</p>
+
+<hr />
+
+<h2>Directivas estructurales</h2>
+
+<h4>Ng For</h4>
+
+<!-- <ul> -->
+<!--   <li *ngFor="let fruta of ['Banana', 'Manzana', 'Limón']">{{ fruta }}</li> -->
+<!--   <li *ngFor="let fruta of frutas; let i = index">{{ i }} - {{ fruta }}</li> -->
+<!-- </ul> -->
+
+<!-- Angular 17 en adelante -->
+<ul>
+  @for (fruta of frutas; track $index) {
+    <li>{{ $index }} - {{ fruta }}</li>
+  }
+</ul>
+
+<hr />
+
+<h4>Ng If</h4>
+
+<button type="button" (click)="alternarParrafo()">Mostrar/Ocultar</button>
+
+<!-- <div *ngIf="mostrarParrafo"> -->
+<!--   <p>Este es un párrafo que se muestra si mostrarParrafo es true</p> -->
+<!-- </div> -->
+
+<!-- Angular 17 en adelante -->
+@if (mostrarParrafo) {
+  <p>Este es un párrafo que se muestra si mostrarParrafo es true</p>
+}
+
+<hr />
+
+<h4>Ng Switch</h4>
+
+<!-- <div [ngSwitch]="estadoPago"> -->
+<!--   <p *ngSwitchCase="estadoPagoEnum.Aceptado">Su pago ha sido aceptado</p> -->
+<!--   <p *ngSwitchCase="'Pendiente'">Su pago está pendiente</p> -->
+<!--   <p *ngSwitchCase="'Rechazado'">Su pago ha sido rechazado</p> -->
+<!--   <!-- En caso de que no coincida con ninguno de los casos anteriores, se ejecutara este caso -->
+
+<!--   <p *ngSwitchDefault>No se ha podido identificar el estado del pago</p> -->
+<!-- </div> -->
+
+<!-- Angular 17 en adelante -->
+
+@switch (estadoPago) {
+  @case (estadoPagoEnum.Aceptado) {
+    <p>Su pago ha sido aceptado</p>
+  }
+  @case ("Pendiente") {
+    <p>Su pago está pendiente</p>
+  }
+  @case ("Rechazado") {
+    <p>Su pago ha sido rechazado</p>
+  }
+  @default {
+    <p>No se ha podido identificar el estado del pago</p>
+  }
+}
+
+<hr />
+
+<h2>Binding</h2>
+
+<input [type]="inputType" />
+<button (click)="alternarTipo()">Cambiar tipo</button>
+
+<p>Two Way Binding</p>
+
+<input [type]="inputType" [(ngModel)]="loginForm.password" />
+<pre>{{ loginForm | json }}</pre>
+
+<hr />
+
+<h2>Pipes</h2>
+
+<p>Nombre: {{ username | uppercase }}</p>
+<p>Sueldo: {{ sueldo | currency: "ARS $" }}</p>
+<p>Fecha de nacimiento: {{ dateBirth | date: "long" }}</p>

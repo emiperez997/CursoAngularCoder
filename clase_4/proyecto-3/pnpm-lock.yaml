@@ -32,6 +32,12 @@ importers:
       '@angular/router':
         specifier: ^18.0.0
         version: 18.0.4(@angular/common@18.0.4(@angular/core@18.0.4(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(@angular/core@18.0.4(rxjs@7.8.1)(zone.js@0.14.7))(@angular/platform-browser@18.0.4(@angular/animations@18.0.4(@angular/core@18.0.4(rxjs@7.8.1)(zone.js@0.14.7)))(@angular/common@18.0.4(@angular/core@18.0.4(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(@angular/core@18.0.4(rxjs@7.8.1)(zone.js@0.14.7)))(rxjs@7.8.1)
+      '@ng-icons/core':
+        specifier: ^28.0.0
+        version: 28.0.0
+      '@ng-icons/heroicons':
+        specifier: ^28.0.0
+        version: 28.0.0
       rxjs:
         specifier: ~7.8.0
         version: 7.8.1
@@ -1252,6 +1258,12 @@ packages:
     resolution: {integrity: sha512-x0fWaQtYp4E6sktbsdAqnehxDgEc/VwM7uLsRCYWaiGu0ykYdZPiS8zCWdnjHwyiumousxfBm4SO31eXqwEZhQ==}
     cpu: [x64]
     os: [win32]
+
+  '@ng-icons/core@28.0.0':
+    resolution: {integrity: sha512-rp4W6mHqm8n0JcLnAMpruluw2cWcKJjzKtlwzBVCzyMlOHI4A/YIPZZDYdOLAayIHr1sz1ZNCAYFHSEpixF+hQ==}
+
+  '@ng-icons/heroicons@28.0.0':
+    resolution: {integrity: sha512-RSGdk1BcCBvlunZK0vysKSeaZueBkEDhSrbEptF+7w2vaOph2erJE9VyUGYhCXxVQ8K1sEkX15w6dxMb6GBaiA==}
 
   '@ngtools/webpack@18.0.5':
     resolution: {integrity: sha512-Dx386WZZn0RwUaBHQYhDW8oi254SxEu8Ty5LHnStqBP6xXdcnsdGel+h9qvJ67He9iu8Rj0PB64EFE4PiklMdQ==}
@@ -5369,6 +5381,14 @@ snapshots:
 
   '@msgpackr-extract/msgpackr-extract-win32-x64@3.0.3':
     optional: true
+
+  '@ng-icons/core@28.0.0':
+    dependencies:
+      tslib: 2.6.3
+
+  '@ng-icons/heroicons@28.0.0':
+    dependencies:
+      tslib: 2.6.3
 
   '@ngtools/webpack@18.0.5(@angular/compiler-cli@18.0.4(@angular/compiler@18.0.4(@angular/core@18.0.4(rxjs@7.8.1)(zone.js@0.14.7)))(typescript@5.4.5))(typescript@5.4.5)(webpack@5.91.0(esbuild@0.21.3))':
     dependencies:

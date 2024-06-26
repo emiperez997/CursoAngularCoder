@@ -1,0 +1,22 @@
+nav {
+  background: var(--lapis-lazuli);
+  padding: 1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1rem;
+
+  a {
+    color: white;
+    font-size: 1rem;
+    font-weight: thin;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--hunyadi-yellow);
+    font-weight: bold;
+  }
+}

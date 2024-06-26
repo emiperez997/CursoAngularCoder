@@ -1,28 +1,56 @@
-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  padding: 10px;
+/* You can add global styles to this file, and also import other style files */
+/* josefin-sans-latin-wght-normal */
+@font-face {
+  font-family: "Josefin Sans Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 700;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/josefin-sans:vf@latest/latin-wght-normal.woff2)
+    format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-p {
-  color: black;
-  font-size: 1rem;
-  padding: 10px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.success .error {
-  font-weight: bold;
-  font-size: 1.5rem;
+body {
+  background: var(--charcoal);
+
+  font-family: "Josefin Sans Variable", sans-serif;
+  box-sizing: border-box;
+
+  background-repeat: no-repeat;
+
+  height: 100vh;
+  width: 100%;
+
+  overflow: hidden;
 }
 
-.success {
-  color: green;
-  background: lightgreen;
+:root {
+  --lapis-lazuli: #33658aff;
+  --carolina-blue: #86bbd8ff;
+  --charcoal: #1c2c35;
+  --hunyadi-yellow: #f6ae2dff;
+  --hunyadi-yellow-light: rgba(246, 174, 45, 0.5);
+  --orange-pantone: #f26419ff;
+  --emerald: #57cc99;
 }
 
-.error {
-  color: red;
-  background: lightcoral;
+/* General Styles */
+span {
+  color: var(--red-pantone);
+}
+
+button {
+  background: var(--berkeley-blue);
+  border: 1px solid var(--honeydew);
+  border-radius: 10px;
+  padding: 1rem;
+  color: white;
 }

@@ -1,0 +1,38 @@
+<section>
+  <div>
+    <h2>Listado de estudiantes</h2>
+
+    <div class="table">
+      <div class="table-header">
+        <div class="table-header-cell">Nombre</div>
+        <div class="table-header-cell">Correo</div>
+        <div class="table-header-cell">Edad</div>
+        <div class="table-header-cell">Estado</div>
+      </div>
+
+      <div class="table-body">
+        <div class="table-body-cell" *ngFor="let student of students">
+          <div class="table-body-cell-content">
+            {{ student.name }}
+          </div>
+          <div class="table-body-cell-content">
+            {{ student.email }}
+          </div>
+          <div class="table-body-cell-content">
+            {{ student.age }}
+          </div>
+
+          <div
+            [ngClass]="{
+              accept: student.inscription === inscriptionStatus.Aceptado,
+              reject: student.inscription === inscriptionStatus.Rechazado,
+              pending: student.inscription === inscriptionStatus.Pendiente,
+            }"
+          >
+            {{ student.inscription }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
