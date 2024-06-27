@@ -1,0 +1,19 @@
+<div class="container my-5">
+  <h2>Lista de Empleados de Diseño</h2>
+
+  <app-empleados-lista
+    (eliminarEmpleado)="eliminarEmpleado($event, 'designers')"
+    [data]="empleadosDesigners"
+  />
+</div>
+
+<div #myDiv class="my-5"></div>
+
+<div class="container my-5">
+  <h2>Lista de Empleados de Desarrollo</h2>
+
+  <app-empleados-lista
+    (eliminarEmpleado)="eliminarEmpleado($event, 'developers')"
+    [data]="empleadosDevelopers"
+  />
+</div>
