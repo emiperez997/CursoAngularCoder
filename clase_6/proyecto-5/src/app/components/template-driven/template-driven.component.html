@@ -1,0 +1,53 @@
+<div class="bg-primary py-5">
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">Reactive Forms</h2>
+
+        <form #myRegisterForm="ngForm">
+          <div class="row">
+            <div class="col">
+              <input
+                #firstNameControl="ngModel"
+                name="firstName"
+                [(ngModel)]="registerForm.firstName"
+                [ngClass]="{
+                  'is-invalid':
+                    firstNameControl?.invalid && firstNameControl?.touched,
+                  'is-valid':
+                    !firstNameControl?.invalid && firstNameControl?.touched,
+                }"
+                type="text"
+                class="form-control"
+                placeholder="First name"
+                aria-label="First name"
+                required
+              />
+            </div>
+
+            <div class="col">
+              <input
+                name="lastName"
+                [(ngModel)]="registerForm.lastName"
+                type="text"
+                class="form-control"
+                placeholder="Last name"
+                aria-label="Last name"
+              />
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-end p-3 mt-3">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+        </form>
+
+        <hr />
+
+        <pre>
+          {{ registerForm | json }}
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>

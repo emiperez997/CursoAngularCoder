@@ -1,0 +1,108 @@
+<div class="bg-primary py-5">
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">Reactive Forms</h2>
+
+        <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+          <div class="row">
+            <div class="col">
+              <!-- <input -->
+              <!--   formControlName="firstName" -->
+              <!--   type="text" -->
+              <!--   class="form-control" -->
+              <!--   [ngClass]="{ -->
+              <!--     'is-invalid': -->
+              <!--       registerForm.get('firstName')?.invalid && -->
+              <!--       registerForm.get('firstName')?.touched && -->
+              <!--       registerForm.get('firstName')?.dirty, -->
+              <!--     'is-valid': -->
+              <!--       registerForm.get('firstName')?.valid && -->
+              <!--       registerForm.get('firstName')?.touched && -->
+              <!--       registerForm.get('firstName')?.dirty, -->
+              <!--   }" -->
+              <!--   placeholder="First name" -->
+              <!--   aria-label="First name" -->
+              <!-- /> -->
+
+              <input
+                formControlName="firstName"
+                type="text"
+                class="form-control"
+                [ngClass]="{
+                  'is-invalid':
+                    firstNameControlInvalid && firstNameControl?.touched,
+                  'is-valid':
+                    !firstNameControlInvalid && firstNameControl?.touched,
+                }"
+                placeholder="First name"
+                aria-label="First name"
+              />
+            </div>
+            @if (firstNameControlInvalid) {
+              <small class="text-danger">
+                @if (firstNameControl?.hasError("required")) {
+                  Este campo es requerido
+                }
+                @if (firstNameControl?.hasError("minlength")) {
+                  Este campo debe tener al menos 3 caracteres
+                }
+                @if (firstNameControl?.hasError("pattern")) {
+                  Solo se permiten letras
+                }
+
+                @if (firstNameControl?.hasError("noHomeroError")) {
+                  No se admiten homeros
+                }
+              </small>
+            }
+
+            <!-- <pre> -->
+            <!--   {{ registerForm.get("firstName")?.errors | json }} -->
+            <!-- </pre> -->
+            <div class="col">
+              <input
+                formControlName="lastName"
+                type="text"
+                class="form-control"
+                [ngClass]="{
+                  'is-invalid': lastNameControlInvalid,
+                  'is-valid':
+                    registerForm.get('lastName')?.valid &&
+                    registerForm.get('lastName')?.touched &&
+                    registerForm.get('lastName')?.dirty,
+                }"
+                placeholder="Last name"
+                aria-label="Last name"
+              />
+            </div>
+          </div>
+
+          @if (lastNameControlInvalid) {
+            <small class="text-danger">
+              @if (lastNameControl?.hasError("required")) {
+                Este campo es requerido <br />
+              }
+              @if (lastNameControl?.hasError("minlength")) {
+                Este campo debe tener al menos 3 caracteres <br />
+              }
+              @if (lastNameControl?.hasError("pattern")) {
+                Solo se permiten letras
+              }
+            </small>
+          }
+
+          <div class="d-flex justify-content-end p-3 mt-3">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+        </form>
+
+        <hr />
+
+        <pre>
+          {{ registerForm.value | json }}
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>

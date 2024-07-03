@@ -10,3 +10,4 @@
 - Clase 3: TypeScript (19/06/24)
 - Clase 4: Directivas e Interpolación (24/06/24)
 - Clase 5: Comunicación entre componentes (26/06/24)
+- Clase 6: Formularios en Angular / Reactive Forms (01/07/24)
