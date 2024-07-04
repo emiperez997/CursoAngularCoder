@@ -1,0 +1,80 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+    @if (showFiller) {
+      <p>Lorem, ipsum dolor sit amet consectetur.</p>
+    }
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <mat-toolbar class="tertiary-toolbar">
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+        (click)="drawer.toggle()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>My Super App</span>
+      <span class="example-spacer"></span>
+      <button
+        mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+      >
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with share icon"
+      >
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <h2>Lista de cursos</h2>
+
+    <app-courses></app-courses>
+
+    <!-- <h2>Tarjetas</h2> -->
+    <!---->
+    <!-- <mat-card class="example-card" appearance="outlined"> -->
+    <!--   <mat-card-header> -->
+    <!--     <div mat-card-avatar class="example-header-image"></div> -->
+    <!--     <mat-card-title> -->
+    <!--       Shiba Inu -->
+    <!--       <mat-icon>search</mat-icon> -->
+    <!--     </mat-card-title> -->
+    <!--     <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+    <!--   </mat-card-header> -->
+    <!--   <img -->
+    <!--     mat-card-image -->
+    <!--     src="https://material.angular.io/assets/img/examples/shiba2.jpg" -->
+    <!--     alt="Photo of a Shiba Inu" -->
+    <!--   /> -->
+    <!--   <mat-card-content> -->
+    <!--     <p> -->
+    <!--       The Shiba Inu is the smallest of the six original and distinct spitz -->
+    <!--       breeds of dog from Japan. A small, agile dog that copes very well with -->
+    <!--       mountainous terrain, the Shiba Inu was originally bred for hunting. -->
+    <!--     </p> -->
+    <!--   </mat-card-content> -->
+    <!--   <mat-card-actions> -->
+    <!--     <button mat-button>LIKE</button> -->
+    <!--     <button mat-button>SHARE</button> -->
+    <!--   </mat-card-actions> -->
+    <!-- </mat-card> -->
+    <!---->
+    <!-- <h2>Botones</h2> -->
+    <!---->
+    <!-- <button mat-raised-button color="primary">Botón</button> -->
+    <!-- <button mat-button color="primary">Botón</button> -->
+    <!-- <button mat-stroked-button color="primary">Botón</button> -->
+    <!-- <button mat-flat-button color="primary">Botón</button> -->
+  </div>
+</mat-drawer-container>

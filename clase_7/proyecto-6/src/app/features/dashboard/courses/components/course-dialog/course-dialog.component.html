@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Crear Curso</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="courseForm">
+    <mat-form-field>
+      <mat-label>Nombre del Curso</mat-label>
+      <input matInput name="title" formControlName="title" />
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-button (click)="onSubmit()">Crear</button>
+</mat-dialog-actions>
