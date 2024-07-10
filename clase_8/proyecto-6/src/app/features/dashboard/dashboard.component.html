@@ -1,0 +1,44 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer [opened]="true" #drawer class="example-sidenav" mode="side">
+    <mat-nav-list>
+      <a mat-list-item href="#">Inicio</a>
+      <a mat-list-item href="#">Cursos</a>
+      <a mat-list-item href="#">Alumnos</a>
+      <a mat-list-item href="#">Inscripciones</a>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <mat-toolbar class="tertiary-toolbar">
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+        (click)="drawer.toggle()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>My Super App</span>
+      <span class="example-spacer"></span>
+      <button
+        mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+      >
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with share icon"
+      >
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <main>
+      <app-courses></app-courses>
+      <!-- <app-clase-pipes></app-clase-pipes> -->
+    </main>
+  </div>
+</mat-drawer-container>

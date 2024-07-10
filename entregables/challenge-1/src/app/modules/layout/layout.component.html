@@ -1,0 +1,9 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <h3 class="">Platform Learning</h3>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <app-toolbar (toggleEvent)="drawer.toggle()"></app-toolbar>
+  </div>
+</mat-drawer-container>

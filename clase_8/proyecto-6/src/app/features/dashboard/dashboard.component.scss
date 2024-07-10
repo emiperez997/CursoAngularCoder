@@ -1,0 +1,28 @@
+.example-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.example-sidenav {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+main {
+  padding: 20px;
+}

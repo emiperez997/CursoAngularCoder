@@ -12,3 +12,4 @@
 - Clase 5: Comunicación entre componentes (26/06/24)
 - Clase 6: Formularios en Angular / Reactive Forms (01/07/24)
 - Clase 7: Angular Material (03/07/24)
+- Clase 8: Pipes y directivas personalizadas (08/07/24)
