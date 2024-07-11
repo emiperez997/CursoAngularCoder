@@ -7,16 +7,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { SidenavComponent } from '../../components/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [LayoutComponent],
   imports: [
-    CommonModule,
     ToolbarComponent,
     MatSidenavModule,
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
+    SidenavComponent,
   ],
   exports: [LayoutComponent],
 })

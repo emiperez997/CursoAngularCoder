@@ -1,1 +1,11 @@
-<p>sidenav works!</p>
+<mat-list>
+  <div mat-subheader>Menú</div>
+  <mat-nav-list>
+    @for (item of listItems; track $index) {
+      <a mat-list-item href="{{ item.url }}">
+        <mat-icon matListItemIcon class="text-white">{{ item.icon }}</mat-icon>
+        <span matListItemLine class="text-white">{{ item.name }}</span>
+      </a>
+    }
+  </mat-nav-list>
+</mat-list>

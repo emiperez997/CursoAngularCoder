@@ -1,13 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
+
+$lapis-lazuli: #33658aff;
+$carolina-blue: #86bbd8ff;
+$charcoal: #1c2c35;
+$hunyadi-yellow: #f6ae2dff;
+$hunyadi-yellow-light: rgba(246, 174, 45, 0.5);
+$orange-pantone: #f26419ff;
 
 html,
 body {
   height: 100%;
+  width: 100%;
 }
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-
-/* Importing Bootstrap SCSS file. */
-@import "bootstrap/scss/bootstrap";

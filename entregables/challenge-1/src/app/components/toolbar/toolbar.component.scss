@@ -1,3 +1,8 @@
+@import "../../../styles.scss";
 .spacer {
   flex: 1 1 auto;
+}
+
+.mat-toolbar {
+  background: $lapis-lazuli;
 }
