@@ -1,17 +1,29 @@
-/* Importing Bootstrap SCSS file. */
-@import "bootstrap/scss/bootstrap";
+@use "@angular/material" as mat;
 
-$lapis-lazuli: #33658aff;
-$carolina-blue: #86bbd8ff;
-$charcoal: #1c2c35;
-$hunyadi-yellow: #f6ae2dff;
-$hunyadi-yellow-light: rgba(246, 174, 45, 0.5);
-$orange-pantone: #f26419ff;
+/* You can add global styles to this file, and also import other style files */
+$theme: mat.define-theme(
+  (
+    color: (
+      theme-type: dark,
+      primary: mat.$violet-palette,
+    ),
+    typography: (
+      brand-family: "Comic Sans",
+      bold-weight: 900,
+    ),
+    density: (
+      scale: -1,
+    ),
+  )
+);
+
+html {
+  @include mat.all-component-themes($theme);
+}
 
 html,
 body {
   height: 100%;
-  width: 100%;
 }
 body {
   margin: 0;

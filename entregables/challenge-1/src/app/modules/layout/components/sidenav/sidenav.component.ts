@@ -3,12 +3,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { CommonModule } from '@angular/common';
-
-interface ListItem {
-  name: string;
-  icon: string;
-  url: string;
-}
+import { ListItem } from './interfaces/ListItem';
 
 @Component({
   selector: 'app-sidenav',
