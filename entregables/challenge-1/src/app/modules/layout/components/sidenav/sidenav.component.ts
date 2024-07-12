@@ -17,7 +17,7 @@ export class SidenavComponent {
     {
       name: 'Inicio',
       icon: 'home',
-      url: '/inicio',
+      url: '/',
     },
     {
       name: 'Cursos',

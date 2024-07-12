@@ -1,0 +1,33 @@
+<h2 mat-dialog-title>{{ isEditing ? "Editar Alumno" : "Crear Alumno" }}</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="createForm">
+    <mat-form-field class="w-full">
+      <mat-label>Nombre</mat-label>
+      <input matInput name="firstName" formControlName="firstName" />
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>Apellido</mat-label>
+      <input matInput name="lastName" formControlName="lastName" />
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>Email</mat-label>
+      <input matInput name="email" formControlName="email" />
+    </mat-form-field>
+
+    <mat-form-field class="w-full">
+      <mat-label>Estado</mat-label>
+      <mat-select name="status" formControlName="status">
+        <mat-option value="ACTIVE">Activo</mat-option>
+        <mat-option value="INACTIVE">Inactivo</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-button (click)="onSubmit()">Crear</button>
+</mat-dialog-actions>

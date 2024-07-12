@@ -10,5 +10,5 @@ import { LayoutModule } from './modules/layout/layout.module';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'challenge-1';
+  title = 'Platform Learning';
 }

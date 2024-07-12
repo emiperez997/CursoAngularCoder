@@ -8,6 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { TableComponent } from '../../components/students/table/table.component';
 
 @NgModule({
   declarations: [LayoutComponent],
@@ -19,6 +20,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
+    TableComponent,
   ],
   exports: [LayoutComponent],
 })
