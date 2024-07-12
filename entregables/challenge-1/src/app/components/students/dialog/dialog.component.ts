@@ -1,6 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import {
+  MAT_DIALOG_DATA,
+  MatDialogModule,
+  MatDialogRef,
+} from '@angular/material/dialog';
 import { formGroup } from './validation';
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -12,6 +16,7 @@ import {
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
+import { Student } from '../../../services/students/interfaces/student';
 
 @Component({
   selector: 'app-dialog',
@@ -38,8 +43,14 @@ export class DialogComponent {
   constructor(
     private fb: FormBuilder,
     private matDialogRef: MatDialogRef<DialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public editingStudent?: Student,
   ) {
     this.createForm = this.fb.group(formGroup);
+
+    if (this.editingStudent) {
+      this.isEditing = true;
+      this.createForm.patchValue(this.editingStudent);
+    }
   }
 
   onSubmit(): void {

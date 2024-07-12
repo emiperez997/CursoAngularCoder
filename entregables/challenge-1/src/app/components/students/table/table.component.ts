@@ -1,6 +1,5 @@
 import {
   AfterViewInit,
-  ChangeDetectorRef,
   Component,
   Input,
   OnInit,
@@ -8,11 +7,7 @@ import {
 } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {
-  MatPaginator,
-  MatPaginatorIntl,
-  MatPaginatorModule,
-} from '@angular/material/paginator';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import {
@@ -26,9 +21,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
-import { MatOptionModule } from '@angular/material/core';
-import { MatSelectModule } from '@angular/material/select';
-import { MatDatepickerModule } from '@angular/material/datepicker';
+import { FullNamePipe } from '../pipes/full-name.pipe';
+import { StatusPipe } from '../../../common/pipes/status-pipe';
+import { StatusDirective } from '../../../common/directives/status.directive';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @Component({
   selector: 'app-students-table',
@@ -44,20 +40,26 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatButtonModule,
     MatProgressSpinnerModule,
     MatDialogModule,
+    FullNamePipe,
+    StatusPipe,
+    StatusDirective,
+    NgxSkeletonLoaderModule,
   ],
   templateUrl: './table.component.html',
   styleUrl: './table.component.scss',
   providers: [StudentsService],
 })
-export class TableComponent implements AfterViewInit {
+export class TableComponent implements OnInit {
   @Input() createButton: boolean = true;
-  isLoading = false;
+  isLoading = true;
+  firstLoading = true;
 
   displayedColumns: string[] = studentColumns;
-  dataSource: MatTableDataSource<Student> = new MatTableDataSource();
+  dataSource!: MatTableDataSource<Student>;
+  skeletonRows: any[] = Array(5).fill({});
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatSort, { static: true }) sort!: MatSort;
 
   constructor(
     private studentService: StudentsService,
@@ -69,10 +71,12 @@ export class TableComponent implements AfterViewInit {
       this.dataSource = new MatTableDataSource(students);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+      this.isLoading = false;
+      this.firstLoading = false;
     });
   }
 
-  ngAfterViewInit(): void {
+  ngOnInit() {
     this.loadStudents();
   }
 
@@ -92,6 +96,7 @@ export class TableComponent implements AfterViewInit {
       .subscribe({
         next: (student) => {
           if (!!student) {
+            this.isLoading = true;
             this.studentService.addStudent(student).subscribe({
               next: (students) => {
                 this.dataSource.data = [...students];
@@ -103,5 +108,40 @@ export class TableComponent implements AfterViewInit {
           }
         },
       });
+  }
+
+  editStudent(student: Student) {
+    this.dialog
+      .open(DialogComponent, {
+        data: student,
+      })
+      .afterClosed()
+      .subscribe({
+        next: (student) => {
+          if (!!student) {
+            this.isLoading = true;
+            this.studentService.updateStudent(student).subscribe({
+              next: (students) => {
+                this.dataSource.data = [...students];
+              },
+              complete: () => {
+                this.isLoading = false;
+              },
+            });
+          }
+        },
+      });
+  }
+
+  deleteStudent(id: number) {
+    this.isLoading = true;
+    this.studentService.deleteStudent(id).subscribe({
+      next: (students) => {
+        this.dataSource.data = [...students];
+      },
+      complete: () => {
+        this.isLoading = false;
+      },
+    });
   }
 }

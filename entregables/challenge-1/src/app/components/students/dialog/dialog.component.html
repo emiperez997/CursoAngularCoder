@@ -2,6 +2,13 @@
 
 <mat-dialog-content>
   <form [formGroup]="createForm">
+    @if (isEditing) {
+      <mat-form-field appearance="fill">
+        <mat-label>ID</mat-label>
+        <input matInput disabled value="{{ editingStudent?.id }}" />
+      </mat-form-field>
+    }
+
     <mat-form-field class="w-full">
       <mat-label>Nombre</mat-label>
       <input matInput name="firstName" formControlName="firstName" />

@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { TableComponent } from '../../components/students/table/table.component';
+import { TitleDirective } from '../../common/directives/title.directive';
 
 @NgModule({
   declarations: [LayoutComponent],
@@ -21,6 +22,7 @@ import { TableComponent } from '../../components/students/table/table.component'
     MatToolbarModule,
     MatIconModule,
     TableComponent,
+    TitleDirective,
   ],
   exports: [LayoutComponent],
 })

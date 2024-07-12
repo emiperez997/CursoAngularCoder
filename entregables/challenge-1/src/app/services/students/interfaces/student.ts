@@ -13,9 +13,9 @@ export interface Student {
 export const studentColumns: string[] = [
   'id',
   'firstName',
-  'lastName',
   'email',
   'status',
   'createdAt',
   'updatedAt',
+  'actions',
 ];

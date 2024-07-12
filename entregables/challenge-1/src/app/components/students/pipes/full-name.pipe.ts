@@ -1,13 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { Student } from '../../../services/students/interfaces/student';
 
 @Pipe({
-  name: 'pipes',
+  name: 'fullName',
   standalone: true,
 })
-export class PipesPipe implements PipeTransform {
-  transform(value: unknown, ...args: unknown[]): unknown {
-    console.log(args);
-
-    return null;
+export class FullNamePipe implements PipeTransform {
+  transform(value: Student, ...args: unknown[]): string {
+    return `${value.firstName} ${value.lastName}`;
   }
 }

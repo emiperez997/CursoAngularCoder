@@ -3,3 +3,37 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 0.25rem;
+  font-size: 10px;
+}
+
+.skeleton {
+  background-color: #f0f0f0;
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: #ddd;
+  }
+  100% {
+    background-color: #f2f2f2;
+  }
+}
+
+.skeleton-container {
+  margin-top: 16px; /* Ajusta el espacio según sea necesario */
+  padding: 0 20px;
+}

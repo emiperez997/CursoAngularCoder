@@ -45,7 +45,11 @@ export class StudentsService {
     const index = this.students.findIndex((s) => s.id === student.id);
 
     if (index !== -1) {
-      this.students[index] = student;
+      this.students[index] = {
+        ...this.students[index],
+        ...student,
+        updatedAt: new Date(),
+      };
 
       return new Observable((observer) => {
         setTimeout(() => {
