@@ -54,11 +54,23 @@ export class DialogComponent {
   }
 
   onSubmit(): void {
-    console.log(this.createForm.value);
-    if (this.createForm.invalid) {
-      return alert('Formulario no válido');
+    if (!this.createForm.invalid) {
+      this.matDialogRef.close(this.createForm.value);
     }
+  }
 
-    this.matDialogRef.close(this.createForm.value);
+  inputValid(inputName: 'firstName' | 'lastName' | 'email') {
+    return (
+      this.createForm.get(inputName)?.valid &&
+      this.createForm.get(inputName)?.touched
+    );
+  }
+
+  inputInvalid(inputName: 'firstName' | 'lastName' | 'email') {
+    return (
+      this.createForm.get(inputName)?.invalid &&
+      this.createForm.get(inputName)?.touched &&
+      this.createForm.get(inputName)?.dirty
+    );
   }
 }

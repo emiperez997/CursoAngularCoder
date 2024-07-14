@@ -11,11 +11,13 @@
 
   <span class="spacer"></span>
 
-  <!-- <button mat-icon-button> -->
-  <!--   <mat-icon>light_mode</mat-icon> -->
-  <!-- </button> -->
-
-  <button mat-icon-button>
-    <mat-icon>dark_mode</mat-icon>
-  </button>
+  @if (getTheme() === "dark") {
+    <button mat-icon-button (click)="toggleTheme()">
+      <mat-icon>light_mode</mat-icon>
+    </button>
+  } @else {
+    <button mat-icon-button (click)="toggleTheme()">
+      <mat-icon>dark_mode</mat-icon>
+    </button>
+  }
 </mat-toolbar>

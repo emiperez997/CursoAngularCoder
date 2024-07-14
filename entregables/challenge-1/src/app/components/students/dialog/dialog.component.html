@@ -11,17 +11,43 @@
 
     <mat-form-field class="w-full">
       <mat-label>Nombre</mat-label>
-      <input matInput name="firstName" formControlName="firstName" />
+      <input
+        [ngClass]="{
+          'is-invalid': inputInvalid('firstName'),
+          'is-valid':
+            inputValid('firstName') && createForm.get('firstName')?.dirty,
+        }"
+        matInput
+        name="firstName"
+        formControlName="firstName"
+      />
     </mat-form-field>
 
     <mat-form-field class="w-full">
       <mat-label>Apellido</mat-label>
-      <input matInput name="lastName" formControlName="lastName" />
+      <input
+        [ngClass]="{
+          'is-invalid': inputInvalid('lastName'),
+          'is-valid':
+            inputValid('lastName') && createForm.get('lastName')?.dirty,
+        }"
+        matInput
+        name="lastName"
+        formControlName="lastName"
+      />
     </mat-form-field>
 
     <mat-form-field class="w-full">
       <mat-label>Email</mat-label>
-      <input matInput name="email" formControlName="email" />
+      <input
+        [ngClass]="{
+          'is-invalid': createForm.get('email')?.invalid,
+          'is-valid': inputValid('email') && createForm.get('email')?.dirty,
+        }"
+        matInput
+        name="email"
+        formControlName="email"
+      />
     </mat-form-field>
 
     <mat-form-field class="w-full">
