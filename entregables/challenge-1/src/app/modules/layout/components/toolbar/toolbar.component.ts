@@ -25,8 +25,6 @@ export class ToolbarComponent {
   }
 
   getTheme() {
-    console.log(this.themeService.getTheme());
-
     return this.themeService.getTheme();
   }
 }

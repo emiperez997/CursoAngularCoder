@@ -21,6 +21,8 @@
         name="firstName"
         formControlName="firstName"
       />
+
+      <mat-error> {{ getError("firstName") }} </mat-error>
     </mat-form-field>
 
     <mat-form-field class="w-full">
@@ -35,6 +37,8 @@
         name="lastName"
         formControlName="lastName"
       />
+
+      <mat-error> {{ getError("lastName") }} </mat-error>
     </mat-form-field>
 
     <mat-form-field class="w-full">
@@ -48,6 +52,8 @@
         name="email"
         formControlName="email"
       />
+
+      <mat-error> {{ getError("email") }} </mat-error>
     </mat-form-field>
 
     <mat-form-field class="w-full">
@@ -62,5 +68,15 @@
 
 <mat-dialog-actions>
   <button mat-button mat-dialog-close>Cancelar</button>
-  <button mat-button (click)="onSubmit()">Crear</button>
+  @if (
+    inputValid("firstName") || inputValid("lastName") || inputValid("email")
+  ) {
+    <button mat-button (click)="onSubmit()">
+      {{ isEditing ? "Editar" : "Crear" }}
+    </button>
+  } @else {
+    <button mat-button [disabled]="true">
+      {{ isEditing ? "Editar" : "Crear" }}
+    </button>
+  }
 </mat-dialog-actions>

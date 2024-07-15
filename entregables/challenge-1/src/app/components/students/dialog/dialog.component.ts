@@ -73,4 +73,39 @@ export class DialogComponent {
       this.createForm.get(inputName)?.dirty
     );
   }
+
+  getError(inputName: 'firstName' | 'lastName' | 'email') {
+    if (!this.createForm.get(inputName)?.errors) {
+      return null;
+    }
+
+    const errors = Object.keys(
+      this.createForm.get(inputName)?.errors as string[],
+    );
+
+    if (errors.length === 0) {
+      return null;
+    }
+
+    let message = '';
+
+    errors.forEach((error) => {
+      switch (error) {
+        case 'required':
+          message += 'Este campo es requerido';
+          break;
+        case 'minlength':
+          message += 'Este campo debe tener al menos 3 caracteres';
+          break;
+        case 'email':
+          message += 'Debe ser un correo electrónico válido';
+          break;
+
+        default:
+          break;
+      }
+    });
+
+    return message;
+  }
 }
