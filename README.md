@@ -16,3 +16,4 @@
 - Clase 9: Servicios y RxJS (10/07/24)
 - Clase 10: Introducción a la programación reactiva con RxJS (15/07/24)
 - Clase 11: Router (17/07/24)
+- Clase 12: Módulos (22/07/24)
