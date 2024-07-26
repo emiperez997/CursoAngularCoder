@@ -17,3 +17,4 @@
 - Clase 10: Introducción a la programación reactiva con RxJS (15/07/24)
 - Clase 11: Router (17/07/24)
 - Clase 12: Módulos (22/07/24)
+- Clase 13: Lazy loading de módulos y Guards (24/07/24)
