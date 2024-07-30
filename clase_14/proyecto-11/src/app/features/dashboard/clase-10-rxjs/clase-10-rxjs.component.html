@@ -1,0 +1,14 @@
+@if (loading) {
+  <p>Cargando...</p>
+} @else {
+  <!-- <h2>Valor del contador: {{ valorContador }}</h2> -->
+  <h2>Valor del contador: {{ myInterval$ | async }}</h2>
+
+  <h3>Cursos</h3>
+
+  <pre> {{ cursos | json }} </pre>
+
+  <h3>Profesores</h3>
+
+  <pre> {{ profesores | json }} </pre>
+}
