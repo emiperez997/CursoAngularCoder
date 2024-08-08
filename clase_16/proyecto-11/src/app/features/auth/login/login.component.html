@@ -1,0 +1,36 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Iniciar sesión</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" />
+          <mat-icon matSuffix>email</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" formControlName="password" />
+          <mat-hint>Contraseña mínima de 8 caracteres</mat-hint>
+          <mat-icon matSuffix>key</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Rol</mat-label>
+          <mat-select formControlName="role">
+            <mat-option value="admin">Administrador</mat-option>
+            <mat-option value="user">Usuario</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <button type="submit" class="w-full" mat-button color="primary">
+          Iniciar sesión
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

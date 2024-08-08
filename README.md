@@ -20,3 +20,5 @@
 - Clase 13: Lazy loading de módulos y Guards (24/07/24)
 - Clase 14: Llamadas a API Rest (29/07/24)
 - Clase 15: Test Unitarios en Angular (31/07/24)
+- Clase 16: Patrón de diseño Redux con NgRx (05/08/24)
+- Clase 17: Feature Store con NgRx (07/08/24)
