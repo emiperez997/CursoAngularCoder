@@ -1,0 +1,38 @@
+{
+  "courses": [
+    {
+      "id": "BE-1",
+      "title": "NestJs",
+      "description": "Curso de Nestjs",
+      "status": "Pendiente",
+      "startDate": "2024-07-01T00:00:00.000Z",
+      "endDate": "2024-07-01T00:00:00.000Z"
+    },
+    {
+      "id": "FE-2",
+      "title": "Frontend Web",
+      "description": "This is a first post",
+      "status": "Aceptado",
+      "startDate": "2024-07-18T03:00:00.000Z",
+      "endDate": "2024-07-31T03:00:00.000Z"
+    }
+  ],
+  "students": [],
+  "enrollments": [
+    {
+      "studentId": "1",
+      "courseId": "1",
+      "id": "8d38"
+    },
+    {
+      "studentId": "2",
+      "courseId": "2",
+      "id": "a16b"
+    },
+    {
+      "studentId": "3",
+      "courseId": "3",
+      "id": "ead7"
+    }
+  ]
+}

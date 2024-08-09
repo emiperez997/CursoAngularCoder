@@ -1,0 +1,23 @@
+<p>{{ "clase-pipes works!" | reverse }}</p>
+
+<p>{{ "Esto es un texto" | reverse: "lowercase" }}</p>
+
+<p>{{ "Esto es un texto" | reverse: "uppercase" }}</p>
+
+<h2>Custom Pipe Challenge</h2>
+
+<p>{{ 2000 | custom: "euro" }}</p>
+<p>{{ 1000 | custom: "dolar" }}</p>
+<p>{{ 300000 | custom: "peso" }}</p>
+
+<h2>Resaltado</h2>
+
+<p appResaltado color="red">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+</p>
+
+<h2>Repetir</h2>
+
+<p *appRepetir="3">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+</p>

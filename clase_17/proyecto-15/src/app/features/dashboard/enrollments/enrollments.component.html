@@ -1,0 +1,14 @@
+<h2>Enrollments</h2>
+
+@if (isLoading$ | async) {
+  <p>Cargando...</p>
+} @else {
+  <pre>
+  @if(error$ | async) {
+    <p>Error</p>
+  }
+  @else {
+    {{ enrollments$ | async | json }}
+  }
+</pre>
+}
